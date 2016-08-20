@@ -1,0 +1,19 @@
+<div>
+<h1 class="text-center">Add a customer</h1>
+
+<div class="form-group">
+	{{#data}}
+	<form class="col-sm-4 col-sm-offset-4 form-inline" action="/customer/add_customers" method="POST">
+		<label>Company:</label> <input class="form-control" type="text" name="company" data-bind="value: {{company}}"/><br>	
+		<label>Name: </label><input class="form-control" type="text" name="name" data-bind="value: {{name}}"/><br>
+		<label>Phone Nr:</label> <input class="form-control" id="usr" type="text" name="telephoneNr" data-bind="value: {{telephoneNr}}"/><br>
+		<label>Email:</label> <input class="form-control"  type="text" name="email" data-bind="value: {{email}}"/><br>
+		<label>Products:</label> <input class="form-control" type="text" name="products" data-bind="value: {{products}}"/><br>
+		<label>Invoice:</label> <input class="form-control"  type="text" name="invoices" data-bind="value: {{invoices}}"/><br>
+		<label for="comment">Comments:</label> <textarea class="form-control" rows="3" id="comment" type="text" name="comments" data-bind="value: {{comments}}"></textarea><br>
+		<input type="submit" class="btn btn-warning btn-lg" value="Save"/> <input action="action" type="submit" class="btn btn-warning btn-lg" value="Cancel" onclick="history.go(-1);"/>
+	</form>
+	{{/data}}
+   
+</div>
+</div>

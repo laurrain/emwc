@@ -1,0 +1,41 @@
+<div>
+<a href="/"><h1 align="center">Customers List</h1></a>
+  
+    <table class="table table-striped" id = "customerList">   
+        <button onclick="location.href='/'" class="col-xs-3">
+					Back to Main Menu
+		    </button>
+        <button onclick="location.href='/add_customers'" class="col-xs-3">
+          Add Customer
+        </button>
+     
+</div>
+<div class="empt"></div>
+  	
+  		<!--form>
+    		<input class ="searchBar" id ="customersSearchBar" type ="text" name ="customer"></input>
+   		</form> 
+   		<a href="/customer/customersList/{{Name}}" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-search"></span>Search</a--> 
+      
+  		<thead>
+      		<tr>
+      			<th class="col-md-3">Company</th>
+            <th class="col-md-3">Name</th>
+            <th class="col-md-3">Telephone Number</th>
+            <th class="col-md-3">Email</th>
+            <th class="col-md-3">Products</th>
+            <th class="col-md-3">Invoices</th>
+            <th class="col-md-3">Comments</th>
+
+    		</tr>
+  		</thead>
+		<tBody>
+				{{#customer}} 
+			<tr>
+  				<td>{{company}}</td><td>{{name}}</td><td>{{telephoneNr}}</td><td>{{email}}</td><td>{{products}}</td><td><a href="emwc/invoice/invoice issue to EMWC.odt">{{invoices}}</a></td><td>{{comments}}</td><td><a href="/customer/edit/{{id}}">Edit</a></td><td><a href="/customer/delete/{{id}}">Delete</a></td>
+			</tr>
+				{{/customer}}
+	</tbody>
+</table>
+</div>
+<div>
