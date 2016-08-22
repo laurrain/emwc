@@ -2,10 +2,14 @@
 <html id="main">
 <head>
     <title>EMWC</title>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!--script src="/js/jquery-1.8.0.min.js"></script-->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.css ">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.min.css ">
     <link rel="stylesheet" type="text/css" href="/css/styleSheet.css">
+    <script src="/js/jquery-3.1.0.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
      <script src="/codebase/dhtmlxscheduler.js" type="text/javascript" charset="utf-8"></script>
@@ -13,7 +17,7 @@
     <style type="text/css" media="screen">
          
     </style>
-    
+
 </head>
 
 <body id="mains" onload="init();">
@@ -21,18 +25,35 @@
         <h1>EMWC</h1>
     </header>
 
+
 <script type="text/javascript" charset="utf-8">
     function init() {
-        scheduler.init('scheduler_here',new Date(2013,8,4),"month");
-        scheduler.config.xml_date="%Y-%m-%d %H:%i";
+          var data = JSON.parse(JSON.stringify(req.body));
+        //var id_events = req.params.id;
+        req.getConnection(function(err, connection){
+            connection.query('insert into customer set ?', data, function(err, results) {
+                if (err){
+                        console.log("Error Updating : %s ",err );
+                }
+                //res.redirect('/events');
+            });
+    });
+};
 
-        var dp = new dataProcessor("/data");
+</script>
+
+<script type="text/javascript" charset="utf-8">
+scheduler.init('scheduler_here', new Date(),"month");
+    function init() {
+        scheduler.init('scheduler_here',new Date(2016,8,4),"month");
+        scheduler.config.xml_date="%d-%m-%Y %H:%i";
+        var dp = new dataProcessor("/events");
         dp.init(scheduler);
         dp.setTransactionMode("POST", false);
     }
 </script>
 
-    <div id="scheduler_here" >
+<div id="scheduler_here" >
         <div class="dhx_cal_navline">
             <div class="dhx_cal_prev_button">&nbsp;</div>
             <div class="dhx_cal_next_button">&nbsp;</div>
@@ -46,18 +67,14 @@
         </div>
         <div class="dhx_cal_data">
         </div>
-    </div>
-
-
+</div>
 
     {{{body}}}
 
-<script src="/js/jquery.min.js"></script>
-
-
-
-
-    <link rel="stylesheet" type="text/css" href="/css/myStore.css">
+<!--script src="/js/jquery-1.8.0.min.js"></script-->
+<script src="/js/jquery-2.js"></script>
+<script src="/js/scheduler.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 </body>
 </html>

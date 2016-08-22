@@ -1,0 +1,16 @@
+<h1 class="text-center">Add Events</h1>
+	
+	      {{#data}}
+	    	
+			<form class="col-sm-4 col-sm-offset-4 form-inline input-group date' id='datetimepicker1" action="/add_events" method="POST">
+				<label>Start Date:</label> <input class="form-control" type="date" name="start_date" data-bind="value:  {{start_date}}"/><br>	
+				<label>End Date: </label><input class="form-control" type="date" name="end_date" data-bind="value: {{end_date}}"/><br>
+				<label>Note:</label> <textarea class="form-control" type="text" name="text" data-bind="value: {{text}}"/></textarea><br>
+				
+				<input type="submit" class="btn btn-warning btn-lg" value="Save"/> <input action="action" type="submit" class="btn btn-warning btn-lg" value="Cancel" onclick="history.go(-1);"/>
+			</form>
+		  {{/data}}
+		
+    
+</div>
+  

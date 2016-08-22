@@ -1,0 +1,16 @@
+<div class="form-group">
+<h1 class="text-center">Update Events</h1>
+    
+{{#data}}
+<form class="form-content col-sm-4 col-sm-offset-4" action="/update_events/{{id_events}}" id="ev" method="POST">
+    <label>Start Date:</label>
+	<input class="form-control" type="text" name="start_date" value="{{start_date}}">
+    <label>End Date: </label>
+	<input class="form-control" type="text" name="end_date" value="{{end_date}}">	
+    <label>Note:</label>
+	<textarea class="form-control" type="text" name="text" value="{{text}}"></textarea>
+	<input type="submit" class="btn btn-warning btn-lg" value="Save"><input action="action" type="submit" class="btn btn-warning btn-lg" value="Cancel" onclick="history.go(-1);"/>
+    
+</form>
+{{/data}}
+</div>

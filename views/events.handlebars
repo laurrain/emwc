@@ -1,0 +1,34 @@
+<div>
+<a href="/"><h1 align="center">Reminder Note</h1></a>
+  
+    <table class="table table-striped" id = "customerList">   
+        <button onclick="location.href='/'" class="col-xs-3">
+					Back to Main Menu
+		    </button>
+        <button onclick="location.href='/add_customers'" class="col-xs-3">
+          Add Customer
+        </button>
+        <button onclick="location.href='/add_events'" class="col-xs-3">
+          Add events
+        </button>
+     
+</div>
+<div class="empt"></div>
+      
+  		<thead>
+      		<tr>
+      			<th class="col-md-3">Start-date</th>
+            <th class="col-md-3">End_date</th>
+            <th class="col-md-3">Note</th>
+    		</tr>
+  		</thead>
+		<tBody>
+				{{#events}} 
+			<tr>
+  				<td>{{start_date}}</td><td>{{end_date}}</td><td>{{text}}</td><td><a href="/edit_events/{{id_events}}">Edit</a></td><td><a href="/delete/{{id_events}}">Delete</a></td>
+			</tr>
+				{{/events}}
+	</tbody>
+</table>
+</div>
+<div>
