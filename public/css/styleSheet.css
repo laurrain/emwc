@@ -100,6 +100,11 @@ body html .bdy {
     border-color: black;
     border-top: 1px solid rgba(0, 0, 0, 0.08); }
 
+    div.form-group{
+      margin-left: 300px;
+    }
+   
+
 /* Makeshift CSS Reset */
 header h1 {
   text-align: center;

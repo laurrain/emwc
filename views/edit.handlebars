@@ -1,23 +1,32 @@
-
-<div class="form-group">
 <h1 class="text-center">Update Customer</h1>
-
+<div class="form-group">
 {{#data}}
-<form class="form-content col-sm-4 col-sm-offset-4" action="/customers/update/{{id}}" method="POST">
+<form  action="/customers/update/{{id}}" action='upload' enctype="multipart/form-data"method="POST">
     <label>Company:</label>
-	<input class="form-control" type="text" name="company" value="{{company}}">
+	<input type="text" name="company" value="{{company}}">
     <label>Name: </label>
-	<input class="form-control" type="text" name="name" value="{{name}}">	
+	<input type="text" name="name" value="{{name}}">	
     <label>Phone Nr:</label>
-	<input class="form-control" type="text" name="telephoneNr" value="{{telephoneNr}}">
+	<input type="text" name="telephoneNr" value="{{telephoneNr}}">
     <label>Email:</label> 
     <input class="form-control" type="text" name="email" value="{{email}}">
     <label>Products:</label>
-    <input class="form-control" type="text" name="products" value="{{products}}">
-    <label>Invoice:</label>
-    <input class="form-control" type="text" name="invoices" value="{{invoices}}">
+    <input  type="text" name="products" value="{{products}}">
+    <label><a href="/file">Invoice:</a></label>
+    <input type="text" name="invoices" value="{{invoices}}">
+    <label>Calendar:</label>
+    <input  type="date" name="date" value="{{end_date}}">
+    <label>Note:</label>
+    <input  type="text" name="note" value="{{note}}">
     <label>Comments:</label> 
-    <textarea type="text" name="comments" value="{{comments}}"></textarea>
+    <textarea type="text" name="comments" value="{{comments}}"></textarea><br>
+    <input type='file' name='fileUploaded'>
 	<input type="submit" class="btn btn-warning btn-lg" value="Save"><input action="action" type="submit" class="btn btn-warning btn-lg" value="Cancel" onclick="history.go(-1);"/>
 </form>
 {{/data}}
+
+
+<!--form method='post' action='upload' enctype="multipart/form-data">
+        <input type='file' name='fileUploaded'>
+       <input type='submit'>
+</form-->

@@ -13,12 +13,15 @@
     "bcrypt": ">= 0.8.5",
     "body-parser": "^1.9.2",
     "bootstrap": "^3.3.5",
+    "connect-busboy": "0.0.2",
     "express": "~4.12.3",
     "express-handlebars": "^1.1.0",
     "express-myconnection": "^1.0.4",
+    "fs-extra": "^0.30.0",
     "google-auth-library": "^0.9.8",
     "googleapis": "^12.3.0",
     "mysql": "^2.5.3",
+    "path": "^0.12.7",
     "prompt": "^0.2.14"
   }
 }

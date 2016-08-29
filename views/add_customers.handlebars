@@ -1,9 +1,8 @@
-<div>
 <h1 class="text-center">Add a customer</h1>
 
 <div class="form-group">
 	{{#data}}
-	<form class="col-sm-4 col-sm-offset-4 form-inline" action="/customer/add_customers" method="POST">
+	<form class="form-inline" action="/add_customers" method="POST">
 		<label>Company:</label> <input class="form-control" type="text" name="company" data-bind="value: {{company}}"/><br>	
 		<label>Name: </label><input class="form-control" type="text" name="name" data-bind="value: {{name}}"/><br>
 		<label>Phone Nr:</label> <input class="form-control" id="usr" type="text" name="telephoneNr" data-bind="value: {{telephoneNr}}"/><br>
@@ -15,5 +14,4 @@
 	</form>
 	{{/data}}
    
-</div>
 </div>
